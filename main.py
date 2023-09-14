@@ -52,8 +52,9 @@ async def put_team_info(team: TeamInfo):
 async def post_rating(rating: Rating):
     return {"message": "Post request received", "rating": rating}
 
-# Kakao 인증 부분도 단순화
 @app.get("/kakao")
-def get_kakao_token(code: Optional[str] = None):
-    # 실제 Kakao API를 호출하는 대신에 테스트용 응답을 반환
-    return {"access_token": "fake_token", "user_info": {"id": 12345, "name": "John Doe"}}
+def get_kakao_token():
+    return {
+        "nickname": "Johny", 
+        "profile_image": "https://i.namu.wiki/i/d1A_wD4kuLHmOOFqJdVlOXVt1TWA9NfNt_HA0CS0Y_N0zayUAX8olMuv7odG2FiDLDQZIRBqbPQwBSArXfEJlQ.webp"
+    }
